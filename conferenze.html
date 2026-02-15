@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html class="dark" lang="it">
+  <head>
+    <meta charset="utf-8" />
+    <title>Conferenze - Historica Legio</title>
+    <link
+      href="data:image/x-icon;base64,"
+      rel="icon"
+      type="image/x-icon"
+      <link
+      rel="icon"
+      type="image/png"
+      href="favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link rel="manifest" href="site.webmanifest" />
+
+    <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect" />
+    <link
+      as="style"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Lora:wght@400;500;700&amp;family=Merriweather:wght@400;700&amp;family=Roboto:wght@400;500;700"
+      onload="this.rel='stylesheet'"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script
+      defer=""
+      src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#5a6a58",
+              secondary: "#8c7d6b",
+              accent: "#4d5b70",
+              "background-light": "#f5f3ef",
+              "background-dark": "#2a2825",
+              "text-light": "#3d3d3d",
+              "text-dark": "#e0e0e0",
+            },
+            fontFamily: {
+              display: ["Merriweather", "serif"],
+              body: ["Lora", "serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.125rem",
+              lg: "0.25rem",
+              xl: "0.5rem",
+              full: "0.75rem",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .sepia-overlay {
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.6),
+            rgba(0, 0, 0, 0.6)
+          ),
+          var(--bg-image);
+      }
+      .dark .sepia-overlay {
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.7),
+            rgba(0, 0, 0, 0.7)
+          ),
+          var(--bg-image);
+      }
+      body {
+        font-family: "Lora", serif;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Merriweather", serif;
+      }
+      .parallax {
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      section {
+        scroll-margin-top: 80px;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark font-body text-text-light dark:text-text-dark"
+  >
+    <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+      <header
+        class="sticky top-0 z-20 w-full bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm border-b border-secondary/20 dark:border-secondary/20 px-4 sm:px-10 py-3"
+      >
+        <div class="mx-auto flex max-w-7xl items-center justify-between">
+          <a href="index.html" class="flex items-center gap-4 text-gray-900 dark:text-gray-50 no-underline">
+            <div class="text-primary">
+              <img
+                src="logo_principale-removebg-preview-2.png"
+                alt="Logo Historica Legio"
+                class="w-12 h-12 text-primary"
+              />
+            </div>
+            <h2
+              class="text-xl font-bold font-display text-text-light dark:text-text-dark"
+            >
+              Historica Legio
+            </h2>
+          </a>
+          <nav class="hidden md:flex items-center gap-8">
+            <a
+              class="text-sm font-medium text-text-light dark:text-text-dark hover:text-primary dark:hover:text-primary transition-colors"
+              href="index.html#chi-siamo"
+              >Chi Siamo</a
+            >
+            <a
+              class="text-sm font-medium text-text-light dark:text-text-dark hover:text-primary dark:hover:text-primary transition-colors"
+              href="index.html#attivita"
+              >Attività</a
+            >
+            <a
+              class="text-sm font-medium text-text-light dark:text-text-dark hover:text-primary dark:hover:text-primary transition-colors"
+              href="index.html#prossimi-eventi"
+              >Prossimi Eventi</a
+            >
+            <a
+              class="text-sm font-medium text-text-light dark:text-text-dark hover:text-primary dark:hover:text-primary transition-colors"
+              href="index.html#contatti"
+              >Contatti</a
+            >
+          </nav>
+          <button
+            class="flex items-center justify-center rounded-full h-10 w-10 bg-primary/10 hover:bg-primary/20 text-text-light dark:text-text-dark dark:bg-primary/20 dark:hover:bg-primary/30 transition-colors"
+          >
+            <svg
+              fill="currentColor"
+              height="20px"
+              viewBox="0 0 256 256"
+              width="20px"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </header>
+      <main class="flex-grow">
+        <!-- Hero Banner -->
+        <section
+          class="relative h-[350px] md:h-[400px] text-white parallax"
+          style="
+            background-image: url('soldati_trincea.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+          "
+        >
+          <div
+            class="absolute inset-0"
+            style="background: rgba(0, 0, 0, 0.6)"
+          ></div>
+          <div
+            class="relative z-10 flex flex-col items-center justify-center h-full text-center px-4"
+          >
+            <div class="text-white mb-4">
+              <svg
+                fill="currentColor"
+                height="48"
+                viewBox="0 0 256 256"
+                width="48"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M216,40H136V24a8,8,0,0,0-16,0V40H40A16,16,0,0,0,24,56V176a16,16,0,0,0,16,16H79.36L57.75,219a8,8,0,0,0,12.5,10l29.59-37h56.32l29.59,37a8,8,0,1,0,12.5-10l-21.61-27H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,136H40V56H216V176Z"
+                ></path>
+              </svg>
+            </div>
+            <h1
+              class="text-4xl md:text-5xl font-bold font-display tracking-tight text-white"
+              style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5)"
+            >
+              Conferenze
+            </h1>
+            <p
+              class="mt-4 max-w-2xl text-lg text-gray-100 font-body"
+              style="text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5)"
+            >
+              Incontri, seminari e dibattiti per approfondire i temi della Grande Guerra
+            </p>
+          </div>
+        </section>
+
+        <div
+          class="px-4 sm:px-10 lg:px-20 xl:px-40 py-10 md:py-20 flex justify-center"
+        >
+          <div class="max-w-5xl w-full">
+            <!-- Breadcrumb -->
+            <nav class="mb-8 text-sm text-text-light dark:text-gray-400 font-body">
+              <a href="index.html" class="hover:text-primary dark:hover:text-primary transition-colors">Home</a>
+              <span class="mx-2">/</span>
+              <a href="index.html#attivita" class="hover:text-primary dark:hover:text-primary transition-colors">Attività</a>
+              <span class="mx-2">/</span>
+              <span class="text-primary">Conferenze</span>
+            </nav>
+
+            <!-- Introduzione -->
+            <section class="py-8 px-4 sm:px-0">
+              <h2
+                class="text-3xl font-bold text-text-light dark:text-text-dark mb-2 font-display"
+              >
+                Le Nostre Conferenze
+              </h2>
+              <div class="w-20 h-1 bg-primary mb-8"></div>
+              <p
+                class="text-lg text-text-light dark:text-gray-300 leading-relaxed font-body max-w-4xl"
+              >
+                Le conferenze rappresentano uno dei pilastri fondamentali delle attività di Historica Legio. Attraverso incontri con storici, ricercatori e appassionati, approfondiamo i grandi temi legati alla Prima Guerra Mondiale e ad altri periodi storici significativi, offrendo al pubblico un'occasione di riflessione e conoscenza.
+              </p>
+              <p
+                class="mt-4 text-lg text-text-light dark:text-gray-300 leading-relaxed font-body max-w-4xl"
+              >
+                Ogni evento è pensato per unire il rigore della ricerca storica alla divulgazione accessibile, creando momenti di dialogo e confronto aperti a tutti.
+              </p>
+            </section>
+
+            <!-- Temi trattati -->
+            <section class="py-8 px-4 sm:px-0">
+              <h2
+                class="text-3xl font-bold text-text-light dark:text-text-dark mb-2 font-display"
+              >
+                Temi Trattati
+              </h2>
+              <div class="w-20 h-1 bg-primary mb-8"></div>
+              <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="flex items-start gap-4 p-6 rounded-lg bg-background-light dark:bg-background-dark border border-secondary/20 dark:border-secondary/20 shadow-md">
+                  <div class="text-primary text-3xl mt-1">
+                    <svg fill="currentColor" height="1em" viewBox="0 0 256 256" width="1em" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M224,48H160a40,40,0,0,0-32,16A40,40,0,0,0,96,48H32A16,16,0,0,0,16,64V192a16,16,0,0,0,16,16H96a24,24,0,0,1,24,24,8,8,0,0,0,16,0,24,24,0,0,1,24-24h64a16,16,0,0,0,16-16V64A16,16,0,0,0,224,48ZM96,192H32V64H96a24,24,0,0,1,24,24V200A39.81,39.81,0,0,0,96,192Zm128,0H160a39.81,39.81,0,0,0-24,8V88a24,24,0,0,1,24-24h64Z"></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 class="text-lg font-bold text-text-light dark:text-text-dark font-display">La Vita in Trincea</h3>
+                    <p class="mt-2 text-sm text-text-light dark:text-gray-400 font-body">Quotidianità, difficoltà e testimonianze dei soldati al fronte durante la Grande Guerra.</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-4 p-6 rounded-lg bg-background-light dark:bg-background-dark border border-secondary/20 dark:border-secondary/20 shadow-md">
+                  <div class="text-primary text-3xl mt-1">
+                    <svg fill="none" stroke="currentColor" stroke-width="16" height="1em" viewBox="0 0 256 256" width="1em" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="128" cy="128" r="96" />
+                      <line x1="128" y1="32" x2="128" y2="224" />
+                      <line x1="32" y1="128" x2="224" y2="128" />
+                      <ellipse cx="128" cy="128" rx="48" ry="96" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 class="text-lg font-bold text-text-light dark:text-text-dark font-display">Geopolitica e Strategie</h3>
+                    <p class="mt-2 text-sm text-text-light dark:text-gray-400 font-body">Analisi delle alleanze, delle strategie militari e delle dinamiche politiche del conflitto mondiale.</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-4 p-6 rounded-lg bg-background-light dark:bg-background-dark border border-secondary/20 dark:border-secondary/20 shadow-md">
+                  <div class="text-primary text-3xl mt-1">
+                    <svg fill="currentColor" height="1em" viewBox="0 0 256 256" width="1em" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M117.25,157.92a60,60,0,1,0-66.5,0A95.83,95.83,0,0,0,3.53,195.63a8,8,0,1,0,13.4,8.74,80,80,0,0,1,134.14,0,8,8,0,0,0,13.4-8.74A95.83,95.83,0,0,0,117.25,157.92ZM40,108a44,44,0,1,1,44,44A44.05,44.05,0,0,1,40,108Zm210.14,98.7a8,8,0,0,1-11.07-2.33A79.83,79.83,0,0,0,172,168a8,8,0,0,1,0-16,44,44,0,1,0-16.34-84.87,8,8,0,1,1-5.94-14.85,60,60,0,0,1,55.53,105.64,95.83,95.83,0,0,1,47.22,37.71A8,8,0,0,1,250.14,206.7Z"></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 class="text-lg font-bold text-text-light dark:text-text-dark font-display">Figure Storiche</h3>
+                    <p class="mt-2 text-sm text-text-light dark:text-gray-400 font-body">Approfondimenti sulle personalità che hanno segnato il corso della storia, tra condottieri e protagonisti dimenticati.</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-4 p-6 rounded-lg bg-background-light dark:bg-background-dark border border-secondary/20 dark:border-secondary/20 shadow-md">
+                  <div class="text-primary text-3xl mt-1">
+                    <svg fill="currentColor" height="1em" viewBox="0 0 256 256" width="1em" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,16V158.75l-26.07-26.06a16,16,0,0,0-22.63,0l-20,20-44-44a16,16,0,0,0-22.62,0L40,149.37V56ZM40,172l52-52,80,80H40Zm176,28H194.63l-36-36,20-20L216,181.38V200ZM144,100a12,12,0,1,1,12,12A12,12,0,0,1,144,100Z"></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 class="text-lg font-bold text-text-light dark:text-text-dark font-display">Reperti e Cimeli</h3>
+                    <p class="mt-2 text-sm text-text-light dark:text-gray-400 font-body">Presentazione e contestualizzazione storica di oggetti, documenti e manufatti recuperati dai campi di battaglia.</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-4 p-6 rounded-lg bg-background-light dark:bg-background-dark border border-secondary/20 dark:border-secondary/20 shadow-md">
+                  <div class="text-primary text-3xl mt-1">
+                    <svg fill="currentColor" height="1em" viewBox="0 0 256 256" width="1em" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M32 208L96 112l40 56 32-48 56 88H32z" />
+                      <path d="M96 112l24-40 24 40" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 class="text-lg font-bold text-text-light dark:text-text-dark font-display">Il Territorio e la Guerra</h3>
+                    <p class="mt-2 text-sm text-text-light dark:text-gray-400 font-body">Il fronte italiano, le fortificazioni, le trincee e i luoghi che ancora conservano le tracce del conflitto.</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-4 p-6 rounded-lg bg-background-light dark:bg-background-dark border border-secondary/20 dark:border-secondary/20 shadow-md">
+                  <div class="text-primary text-3xl mt-1">
+                    <svg fill="currentColor" height="1em" viewBox="0 0 256 256" width="1em" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M128 32L16 80l112 48 112-48-112-48zm0 48v96m-56 32a56 24 0 00112 0"
+                        stroke="currentColor" stroke-width="12" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 class="text-lg font-bold text-text-light dark:text-text-dark font-display">Memoria e Didattica</h3>
+                    <p class="mt-2 text-sm text-text-light dark:text-gray-400 font-body">Come trasmettere alle nuove generazioni il significato e le lezioni della Grande Guerra attraverso l'educazione.</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Conferenze Passate -->
+            <section class="py-8 px-4 sm:px-0">
+              <h2
+                class="text-3xl font-bold text-text-light dark:text-text-dark mb-2 font-display"
+              >
+                Conferenze Recenti
+              </h2>
+              <div class="w-20 h-1 bg-primary mb-8"></div>
+              <div class="space-y-6">
+                <!-- Conferenza 1 -->
+                <div class="flex flex-col md:flex-row gap-6 p-6 rounded-lg bg-white dark:bg-background-dark border border-secondary/20 dark:border-secondary/20 shadow-lg">
+                  <div class="md:w-1/3 flex-shrink-0">
+                    <img
+                      src="napoleone.jpg"
+                      alt="Conferenza su Napoleone"
+                      class="w-full h-48 md:h-full object-cover rounded-lg"
+                    />
+                  </div>
+                  <div class="flex-grow flex flex-col justify-center">
+                    <div class="flex items-center gap-3 mb-3">
+                      <span class="inline-block bg-primary/10 dark:bg-primary/20 text-primary text-xs font-semibold px-3 py-1 rounded-full font-body">22 Febbraio 2026</span>
+                    </div>
+                    <h3 class="text-xl font-bold font-display text-text-light dark:text-text-dark mb-2">
+                      Un viaggio nella storia: L'Uomo e il Condottiero oltre il mito
+                    </h3>
+                    <p class="text-text-light dark:text-gray-300 font-body leading-relaxed">
+                      Conferenza dedicata alla figura di Napoleone, oltre i luoghi comuni e le fake news. Relatore: Avv. Scognamillo E. - Forte Biondella (VR).
+                    </p>
+                    <p class="mt-3 text-sm text-gray-500 dark:text-gray-400 font-body">
+                      <span class="font-semibold">Luogo:</span> Forte Biondella, Verona
+                    </p>
+                  </div>
+                </div>
+                <!-- Conferenza 2 -->
+                <div class="flex flex-col md:flex-row gap-6 p-6 rounded-lg bg-white dark:bg-background-dark border border-secondary/20 dark:border-secondary/20 shadow-lg">
+                  <div class="md:w-1/3 flex-shrink-0">
+                    <div
+                      class="w-full h-48 md:h-full min-h-[12rem] bg-cover bg-center rounded-lg"
+                      style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCDX8bNh-XdOHrvG9w-oYtVvXo7RJuUFAn-FNus2vl3BvtWsAVWul0qZstQMd3uEMemrxo5gATpxcnX631rra2ueKKlNoE8xuKzQB-IpWdBdvoTPPCSrChr0ulLFUpTsuAa2RZY_qwj1_WF5f0bvlhP33sS63ZMr1cF7k0E2QKckKpmSyqiYLDWiYQvQ0G-HKqXhAF1JeJXjBcpUKnZrjc4HCeXs7MTas9V-6hl70xfwlBTneh6Ao3bwABGa68A-mARozCmr7EN')"
+                    ></div>
+                  </div>
+                  <div class="flex-grow flex flex-col justify-center">
+                    <div class="flex items-center gap-3 mb-3">
+                      <span class="inline-block bg-primary/10 dark:bg-primary/20 text-primary text-xs font-semibold px-3 py-1 rounded-full font-body">2024</span>
+                    </div>
+                    <h3 class="text-xl font-bold font-display text-text-light dark:text-text-dark mb-2">
+                      Progressi Tecnologici nella Prima Guerra Mondiale
+                    </h3>
+                    <p class="text-text-light dark:text-gray-300 font-body leading-relaxed">
+                      Una conferenza dedicata alle innovazioni tecnologiche e belliche introdotte durante il primo conflitto mondiale, con presentazioni di esperti e documenti d'archivio.
+                    </p>
+                  </div>
+                </div>
+                <!-- Conferenza 3 -->
+                <div class="flex flex-col md:flex-row gap-6 p-6 rounded-lg bg-white dark:bg-background-dark border border-secondary/20 dark:border-secondary/20 shadow-lg">
+                  <div class="md:w-1/3 flex-shrink-0">
+                    <div
+                      class="w-full h-48 md:h-full min-h-[12rem] bg-cover bg-center rounded-lg"
+                      style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC7uXyVfYd0rCD78RYmtcitl2pPyauV6KpUlZuBZGos73Fh-ayuf1vuJu6P0CSuTrdn2Y23NsdJlB1r6WhTGN7mebjc6YoB5tnVfFMj2hAriU9zSrdlLFLTzWpfECUPYHVaDxX8ZFdjwygDDgx5_kW3b19jSsvN0OmXiSJzbf2oqAkPukJGBXY2YAzW0V0FRyWete41DFDF2nNBPrP-IOsgh5k_J2FikCaLAXyilvflXHLqcNPR_5OEZB7LtnnuxwlBK_K7DSJX')"
+                    ></div>
+                  </div>
+                  <div class="flex-grow flex flex-col justify-center">
+                    <div class="flex items-center gap-3 mb-3">
+                      <span class="inline-block bg-primary/10 dark:bg-primary/20 text-primary text-xs font-semibold px-3 py-1 rounded-full font-body">2024</span>
+                    </div>
+                    <h3 class="text-xl font-bold font-display text-text-light dark:text-text-dark mb-2">
+                      Preservare la Memoria: Monumenti e Luoghi della Grande Guerra
+                    </h3>
+                    <p class="text-text-light dark:text-gray-300 font-body leading-relaxed">
+                      Incontro sul tema della conservazione e del restauro dei monumenti dedicati ai caduti della Prima Guerra Mondiale nel territorio veneto.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Come partecipare -->
+            <section class="py-8 px-4 sm:px-0">
+              <h2
+                class="text-3xl font-bold text-text-light dark:text-text-dark mb-2 font-display"
+              >
+                Come Partecipare
+              </h2>
+              <div class="w-20 h-1 bg-primary mb-8"></div>
+              <div class="p-8 rounded-lg bg-white dark:bg-background-dark border border-secondary/20 dark:border-secondary/20 shadow-lg">
+                <p class="text-lg text-text-light dark:text-gray-300 leading-relaxed font-body max-w-4xl">
+                  Le nostre conferenze sono aperte a tutti gli appassionati di storia. Gli eventi si svolgono presso sedi di rilievo storico e culturale nel territorio veronese e veneto.
+                </p>
+                <p class="mt-4 text-lg text-text-light dark:text-gray-300 leading-relaxed font-body max-w-4xl">
+                  Per ricevere aggiornamenti sui prossimi incontri e conferenze, contattaci all'indirizzo email:
+                  <a
+                    class="text-primary hover:underline"
+                    href="mailto:historicalegio@gmail.com"
+                  >historicalegio@gmail.com</a>
+                  oppure seguici sui nostri canali social.
+                </p>
+                <div class="mt-8">
+                  <a
+                    class="inline-block rounded-md bg-primary px-8 py-3 text-lg font-semibold text-white shadow-lg transition hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background-dark"
+                    href="index.html#contatti"
+                  >
+                    Contattaci
+                  </a>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </main>
+      <!-- Back to Top Button -->
+      <button
+        id="backToTopBtn"
+        title="Torna su"
+        class="fixed bottom-6 right-6 z-50 bg-primary text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center transition hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+        style="display: none"
+      >
+        <span class="flex items-center justify-center w-full h-full">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            class="w-7 h-7"
+            stroke="white"
+          >
+            <circle
+              cx="12"
+              cy="12"
+              r="9"
+              stroke="white"
+              stroke-width="2"
+              fill="none"
+            />
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M12 15V9m0 0l-3 3m3-3l3 3"
+              stroke="white"
+              stroke-width="2"
+            />
+          </svg>
+        </span>
+      </button>
+      <footer
+        class="bg-background-light dark:bg-background-dark border-t border-secondary/20 dark:border-secondary/20 py-8 px-4 sm:px-10"
+      >
+        <div
+          class="container mx-auto max-w-7xl flex flex-col md:flex-row justify-between items-center text-sm text-text-light dark:text-text-dark"
+        >
+          <p class="mb-4 md:mb-0">
+            © 2025 Historica Legio. All rights reserved.
+          </p>
+          <nav class="flex flex-wrap justify-center gap-4 md:gap-6">
+            <a
+              class="hover:text-primary dark:hover:text-primary transition-colors"
+              href="index.html"
+              >Home</a
+            >
+            <a
+              class="hover:text-primary dark:hover:text-primary transition-colors"
+              href="index.html#chi-siamo"
+              >Chi Siamo</a
+            >
+            <a
+              class="hover:text-primary dark:hover:text-primary transition-colors"
+              href="index.html#attivita"
+              >Attività</a
+            >
+            <a
+              class="hover:text-primary dark:hover:text-primary transition-colors"
+              href="index.html#prossimi-eventi"
+              >Prossimi Eventi</a
+            >
+            <a
+              class="hover:text-primary dark:hover:text-primary transition-colors"
+              href="index.html#contatti"
+              >Contatti</a
+            >
+          </nav>
+        </div>
+      </footer>
+    </div>
+    <script>
+      const backToTopBtn = document.getElementById("backToTopBtn");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 300) {
+          backToTopBtn.style.display = "block";
+        } else {
+          backToTopBtn.style.display = "none";
+        }
+      });
+      backToTopBtn.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    </script>
+  </body>
+</html>
