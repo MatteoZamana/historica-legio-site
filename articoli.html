@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html class="dark" lang="it">
+  <head>
+    <meta charset="utf-8" />
+    <title>Tutti gli articoli - Historica Legio</title>
+    <meta name="description" content="Raccolta completa degli articoli pubblicati da Historica Legio, ordinati per data di pubblicazione." />
+    <link
+      href="data:image/x-icon;base64,"
+      rel="icon"
+      type="image/x-icon"
+      <link
+      rel="icon"
+      type="image/png"
+      href="favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link rel="manifest" href="site.webmanifest" />
+
+    <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect" />
+    <link
+      as="style"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Lora:wght@400;500;700&amp;family=Merriweather:wght@400;700&amp;family=Roboto:wght@400;500;700"
+      onload="this.rel='stylesheet'"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#5a6a58",
+              secondary: "#8c7d6b",
+              accent: "#4d5b70",
+              "background-light": "#f5f3ef",
+              "background-dark": "#2a2825",
+              "text-light": "#3d3d3d",
+              "text-dark": "#e0e0e0",
+            },
+            fontFamily: {
+              display: ["Merriweather", "serif"],
+              body: ["Lora", "serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.125rem",
+              lg: "0.25rem",
+              xl: "0.5rem",
+              full: "0.75rem",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body { font-family: "Lora", serif; }
+      h1, h2, h3, h4, h5, h6 { font-family: "Merriweather", serif; }
+      html { scroll-behavior: smooth; }
+    </style>
+  </head>
+  <body class="bg-background-light dark:bg-background-dark font-body text-text-light dark:text-text-dark min-h-screen flex flex-col">
+
+    <!-- Header -->
+    <header class="sticky top-0 z-20 w-full bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm border-b border-secondary/20 px-4 sm:px-10 py-3">
+      <div class="mx-auto flex max-w-7xl items-center justify-between">
+        <a href="index.html" class="flex items-center gap-4 text-gray-900 dark:text-gray-50 no-underline hover:opacity-80 transition-opacity">
+          <img src="logo_principale-removebg-preview-2.png" alt="Logo Historica Legio" class="w-12 h-12" />
+          <h2 class="text-xl font-bold font-display text-text-light dark:text-text-dark">Historica Legio</h2>
+        </a>
+        <nav class="hidden md:flex items-center gap-8">
+          <a class="text-sm font-medium text-text-light dark:text-text-dark hover:text-primary dark:hover:text-primary transition-colors" href="index.html#chi-siamo">Chi Siamo</a>
+          <a class="text-sm font-medium text-text-light dark:text-text-dark hover:text-primary dark:hover:text-primary transition-colors" href="index.html#attivita">Attività</a>
+          <a class="text-sm font-medium text-text-light dark:text-text-dark hover:text-primary dark:hover:text-primary transition-colors" href="index.html#prossimi-eventi">Prossimi Eventi</a>
+          <a class="text-sm font-medium text-text-light dark:text-text-dark hover:text-primary dark:hover:text-primary transition-colors" href="index.html#contatti">Contatti</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main content -->
+    <main class="flex-grow">
+      <div class="container mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-14">
+
+        <!-- Page title -->
+        <h1 class="text-3xl font-bold font-display text-text-light dark:text-text-dark mb-2">Tutti gli articoli</h1>
+        <div class="w-20 h-1 bg-primary mb-10"></div>
+
+        <!-- Articles table -->
+        <div class="divide-y divide-secondary/20 dark:divide-secondary/20">
+
+          <!-- SOSTITUIRE: aggiungere o rimuovere righe per ogni articolo. Ordine: data decrescente, poi titolo alfabetico. -->
+
+          <article class="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-6 py-5 group">
+            <time class="text-sm font-medium text-secondary dark:text-gray-400 whitespace-nowrap shrink-0 w-32">15 marzo 2025</time>
+            <a href="articolo.html" class="text-lg font-semibold font-display text-text-light dark:text-text-dark group-hover:text-primary dark:group-hover:text-primary transition-colors leading-snug">
+              Nuove Ricerche sulla Guerra di Trincea
+            </a>
+          </article>
+
+          <article class="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-6 py-5 group">
+            <time class="text-sm font-medium text-secondary dark:text-gray-400 whitespace-nowrap shrink-0 w-32">10 febbraio 2025</time>
+            <a href="articolo.html" class="text-lg font-semibold font-display text-text-light dark:text-text-dark group-hover:text-primary dark:group-hover:text-primary transition-colors leading-snug">
+              Preservare i Monumenti Locali
+            </a>
+          </article>
+
+          <article class="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-6 py-5 group">
+            <time class="text-sm font-medium text-secondary dark:text-gray-400 whitespace-nowrap shrink-0 w-32">18 gennaio 2025</time>
+            <a href="articolo.html" class="text-lg font-semibold font-display text-text-light dark:text-text-dark group-hover:text-primary dark:group-hover:text-primary transition-colors leading-snug">
+              Momenti Salienti della Conferenza Annuale
+            </a>
+          </article>
+
+        </div>
+        <!-- Fine lista articoli -->
+
+        <!-- Back link -->
+        <div class="mt-12 pt-6 border-t border-secondary/20 dark:border-secondary/20">
+          <a href="index.html" class="inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+            </svg>
+            Torna alla homepage
+          </a>
+        </div>
+
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-background-light dark:bg-background-dark border-t border-secondary/20 py-8 px-4 sm:px-10">
+      <div class="container mx-auto max-w-7xl flex flex-col md:flex-row justify-between items-center text-sm text-text-light dark:text-text-dark">
+        <p class="mb-4 md:mb-0">© 2025 Historica Legio. All rights reserved.</p>
+        <nav class="flex flex-wrap justify-center gap-4 md:gap-6">
+          <a class="hover:text-primary transition-colors" href="index.html">Home</a>
+          <a class="hover:text-primary transition-colors" href="index.html#chi-siamo">Chi Siamo</a>
+          <a class="hover:text-primary transition-colors" href="index.html#attivita">Attività</a>
+          <a class="hover:text-primary transition-colors" href="index.html#prossimi-eventi">Prossimi Eventi</a>
+          <a class="hover:text-primary transition-colors" href="index.html#contatti">Contatti</a>
+        </nav>
+      </div>
+    </footer>
+
+  </body>
+</html>
