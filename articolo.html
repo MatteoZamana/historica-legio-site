@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html class="dark" lang="it">
+  <head>
+    <meta charset="utf-8" />
+    <!-- SOSTITUIRE: Titolo dell'articolo per <title> e meta description -->
+    <title>Titolo Articolo - Historica Legio</title>
+    <meta name="description" content="Descrizione breve dell'articolo per i motori di ricerca." />
+    <link
+      href="data:image/x-icon;base64,"
+      rel="icon"
+      type="image/x-icon"
+      <link
+      rel="icon"
+      type="image/png"
+      href="favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link rel="manifest" href="site.webmanifest" />
+
+    <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect" />
+    <link
+      as="style"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Lora:wght@400;500;700&amp;family=Merriweather:wght@400;700&amp;family=Roboto:wght@400;500;700"
+      onload="this.rel='stylesheet'"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script
+      defer=""
+      src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#5a6a58",
+              secondary: "#8c7d6b",
+              accent: "#4d5b70",
+              "background-light": "#f5f3ef",
+              "background-dark": "#2a2825",
+              "text-light": "#3d3d3d",
+              "text-dark": "#e0e0e0",
+            },
+            fontFamily: {
+              display: ["Merriweather", "serif"],
+              body: ["Lora", "serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.125rem",
+              lg: "0.25rem",
+              xl: "0.5rem",
+              full: "0.75rem",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .sepia-overlay {
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.6),
+            rgba(0, 0, 0, 0.6)
+          ),
+          var(--bg-image);
+      }
+      .dark .sepia-overlay {
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.7),
+            rgba(0, 0, 0, 0.7)
+          ),
+          var(--bg-image);
+      }
+      body {
+        font-family: "Lora", serif;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Merriweather", serif;
+      }
+      .parallax {
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      section {
+        scroll-margin-top: 80px;
+      }
+      .article-body p {
+        margin-bottom: 1.5rem;
+        line-height: 1.9;
+        font-size: 1.0625rem;
+      }
+      .article-body h2 {
+        margin-top: 2.5rem;
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+        font-weight: 700;
+      }
+      .article-body h3 {
+        margin-top: 2rem;
+        margin-bottom: 0.75rem;
+        font-size: 1.2rem;
+        font-weight: 700;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark font-body text-text-light dark:text-text-dark"
+  >
+    <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+
+      <!-- ==================== HEADER ==================== -->
+      <header
+        class="sticky top-0 z-20 w-full bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm border-b border-secondary/20 dark:border-secondary/20 px-4 sm:px-10 py-3"
+      >
+        <div class="mx-auto flex max-w-7xl items-center justify-between">
+          <a href="index.html" class="flex items-center gap-4 text-gray-900 dark:text-gray-50 no-underline">
+            <div class="text-primary">
+              <img
+                src="logo_principale-removebg-preview-2.png"
+                alt="Logo Historica Legio"
+                class="w-12 h-12 text-primary"
+              />
+            </div>
+            <h2
+              class="text-xl font-bold font-display text-text-light dark:text-text-dark"
+            >
+              Historica Legio
+            </h2>
+          </a>
+          <nav class="hidden md:flex items-center gap-8">
+            <a
+              class="text-sm font-medium text-text-light dark:text-text-dark hover:text-primary dark:hover:text-primary transition-colors"
+              href="index.html#chi-siamo"
+              >Chi Siamo</a
+            >
+            <a
+              class="text-sm font-medium text-text-light dark:text-text-dark hover:text-primary dark:hover:text-primary transition-colors"
+              href="index.html#attivita"
+              >Attività</a
+            >
+            <a
+              class="text-sm font-medium text-text-light dark:text-text-dark hover:text-primary dark:hover:text-primary transition-colors"
+              href="index.html#prossimi-eventi"
+              >Prossimi Eventi</a
+            >
+            <a
+              class="text-sm font-medium text-text-light dark:text-text-dark hover:text-primary dark:hover:text-primary transition-colors"
+              href="index.html#contatti"
+              >Contatti</a
+            >
+          </nav>
+          <button
+            class="flex items-center justify-center rounded-full h-10 w-10 bg-primary/10 hover:bg-primary/20 text-text-light dark:text-text-dark dark:bg-primary/20 dark:hover:bg-primary/30 transition-colors"
+          >
+            <svg
+              fill="currentColor"
+              height="20px"
+              viewBox="0 0 256 256"
+              width="20px"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </header>
+
+      <main class="flex-grow">
+
+        <!-- ==================== HERO ARTICOLO ====================
+             SOSTITUIRE: immagine hero (src), titolo (h1), categoria e data -->
+        <section
+          class="relative h-[380px] md:h-[450px] text-white parallax"
+          style="
+            background-image: url('soldati_trincea.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+          "
+        >
+          <div
+            class="absolute inset-0"
+            style="background: rgba(0, 0, 0, 0.62)"
+          ></div>
+          <div
+            class="relative z-10 flex flex-col items-center justify-center h-full text-center px-4"
+          >
+            <!-- SOSTITUIRE: etichetta categoria -->
+            <span class="inline-block bg-primary/80 text-white text-xs font-semibold uppercase tracking-widest px-4 py-1 rounded-full mb-5 font-body">
+              Ricerca Storica
+            </span>
+            <!-- SOSTITUIRE: titolo principale dell'articolo -->
+            <h1
+              class="text-3xl md:text-5xl font-bold font-display tracking-tight text-white max-w-3xl"
+              style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5)"
+            >
+              Titolo dell'Articolo
+            </h1>
+            <!-- SOSTITUIRE: sottotitolo / sommario dell'articolo -->
+            <p
+              class="mt-4 max-w-2xl text-base md:text-lg text-gray-100 font-body"
+              style="text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5)"
+            >
+              Sottotitolo o breve sommario introduttivo dell'articolo.
+            </p>
+          </div>
+        </section>
+
+        <!-- ==================== CORPO PAGINA ==================== -->
+        <div class="px-4 sm:px-10 lg:px-20 xl:px-40 py-10 md:py-16 flex justify-center">
+          <div class="max-w-3xl w-full">
+
+            <!-- Breadcrumb -->
+            <nav class="mb-8 text-sm text-text-light dark:text-gray-400 font-body">
+              <a href="index.html" class="hover:text-primary dark:hover:text-primary transition-colors">Home</a>
+              <span class="mx-2">/</span>
+              <a href="index.html#notizie" class="hover:text-primary dark:hover:text-primary transition-colors">Notizie e Articoli</a>
+              <span class="mx-2">/</span>
+              <!-- SOSTITUIRE: titolo breve per breadcrumb -->
+              <span class="text-primary">Titolo Articolo</span>
+            </nav>
+
+            <!-- Metadati articolo -->
+            <div class="flex flex-wrap items-center gap-4 mb-8 pb-6 border-b border-secondary/20 dark:border-secondary/20">
+              <!-- SOSTITUIRE: categoria -->
+              <span class="inline-block bg-primary/10 dark:bg-primary/20 text-primary text-xs font-semibold px-3 py-1 rounded-full font-body uppercase tracking-wide">
+                Ricerca Storica
+              </span>
+              <!-- SOSTITUIRE: data di pubblicazione -->
+              <span class="flex items-center gap-1.5 text-sm text-gray-500 dark:text-gray-400 font-body">
+                <svg fill="currentColor" height="14" viewBox="0 0 256 256" width="14" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M208,32H184V24a8,8,0,0,0-16,0v8H88V24a8,8,0,0,0-16,0v8H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32Zm0,176H48V48H72v8a8,8,0,0,0,16,0V48h80v8a8,8,0,0,0,16,0V48h24V80H48v16H208Z"></path>
+                </svg>
+                16 Maggio 2026
+              </span>
+              <!-- SOSTITUIRE: nome autore -->
+              <span class="flex items-center gap-1.5 text-sm text-gray-500 dark:text-gray-400 font-body">
+                <svg fill="currentColor" height="14" viewBox="0 0 256 256" width="14" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M230.92,212c-15.23-26.33-38.7-45.21-66.09-54.16a72,72,0,1,0-73.66,0C63.78,166.78,40.31,185.66,25.08,212a8,8,0,1,0,13.85,8c18.84-32.56,52.14-52,89.07-52s70.23,19.44,89.07,52a8,8,0,1,0,13.85-8ZM72,96a56,56,0,1,1,56,56A56.06,56.06,0,0,1,72,96Z"></path>
+                </svg>
+                Redazione Historica Legio
+              </span>
+            </div>
+
+            <!-- ==================== CORPO DELL'ARTICOLO ====================
+                 Modifica liberamente i contenuti: paragrafi, titoli, immagini, citazioni -->
+            <article class="article-body text-text-light dark:text-gray-300">
+
+              <!-- Paragrafo introduttivo -->
+              <p class="text-lg leading-relaxed font-body">
+                <strong>Paragrafo introduttivo.</strong> Inserisci qui il testo di apertura dell'articolo. Questo primo paragrafo dovrebbe catturare l'attenzione del lettore e presentare in modo chiaro il tema che verrà sviluppato nelle sezioni successive.
+              </p>
+
+              <!-- Prima sezione -->
+              <h2 class="text-text-light dark:text-text-dark">Primo Titolo di Sezione</h2>
+              <p>
+                Inserisci qui il testo della prima sezione. Puoi sviluppare il tema storico con dati, aneddoti, fonti documentali o testimonianze. Il corpo del testo utilizza automaticamente il carattere tipografico Lora, adatto alla lettura estesa.
+              </p>
+              <p>
+                Continua con un secondo paragrafo per la stessa sezione. Ricorda di mantenere un tono divulgativo ma rigoroso, in linea con la missione di Historica Legio: promuovere la conoscenza storica in modo accessibile a tutti.
+              </p>
+
+              <!-- Immagine nel corpo dell'articolo -->
+              <!-- SOSTITUIRE: src, alt e didascalia dell'immagine -->
+              <figure class="my-10">
+                <img
+                  src="soldati_trincea.jpg"
+                  alt="Descrizione dell'immagine"
+                  class="w-full rounded-lg shadow-lg object-cover max-h-80"
+                />
+                <figcaption class="mt-3 text-center text-sm text-gray-500 dark:text-gray-400 font-body italic">
+                  Didascalia dell'immagine: fonte, anno, contesto storico.
+                </figcaption>
+              </figure>
+
+              <!-- Seconda sezione -->
+              <h2 class="text-text-light dark:text-text-dark">Secondo Titolo di Sezione</h2>
+              <p>
+                Sviluppa qui un secondo tema o aspetto dell'argomento trattato. Puoi suddividere l'articolo in quante sezioni ritieni opportuno, aggiungendo o rimuovendo blocchi &lt;h2&gt; e paragrafi &lt;p&gt; a seconda della struttura narrativa che preferisci.
+              </p>
+
+              <!-- Sottosezione -->
+              <h3 class="text-text-light dark:text-text-dark">Sottotitolo (opzionale)</h3>
+              <p>
+                Utilizza i sottotitoli &lt;h3&gt; per suddividere ulteriormente una sezione quando il contenuto lo richiede. Ad esempio, per distinguere periodi cronologici, aree geografiche, o aspetti tematici diversi.
+              </p>
+
+              <!-- Citazione in evidenza -->
+              <blockquote class="my-10 pl-6 border-l-4 border-primary bg-primary/5 dark:bg-primary/10 py-4 pr-4 rounded-r-lg">
+                <p class="text-xl italic font-body text-text-light dark:text-gray-200 leading-relaxed mb-2">
+                  "Inserisci qui una citazione significativa: una frase tratta da un documento storico, da un diario, da una testimonianza o da un'opera di riferimento che arricchisce il contenuto dell'articolo."
+                </p>
+                <!-- SOSTITUIRE: attribuzione della citazione -->
+                <cite class="text-sm text-gray-500 dark:text-gray-400 font-body not-italic">— Autore della citazione, Anno</cite>
+              </blockquote>
+
+              <!-- Terza sezione (conclusioni) -->
+              <h2 class="text-text-light dark:text-text-dark">Conclusioni</h2>
+              <p>
+                Il paragrafo conclusivo riassume i punti salienti dell'articolo e offre una riflessione finale. Puoi rinviare il lettore ad approfondimenti, a future attività di Historica Legio, oppure invitarlo a partecipare agli eventi associativi.
+              </p>
+              <p>
+                Per ulteriori informazioni, per partecipare alle nostre attività o per ricevere aggiornamenti sulle prossime conferenze ed eventi, contattaci all'indirizzo
+                <a href="mailto:historicalegio@gmail.com" class="text-primary hover:underline">historicalegio@gmail.com</a>.
+              </p>
+
+            </article>
+            <!-- ==================== FINE CORPO ARTICOLO ==================== -->
+
+            <!-- Tag / Parole chiave (opzionali) -->
+            <!-- SOSTITUIRE o RIMUOVERE i tag secondo l'argomento dell'articolo -->
+            <div class="mt-10 pt-8 border-t border-secondary/20 dark:border-secondary/20">
+              <p class="text-sm font-semibold text-text-light dark:text-gray-400 font-body mb-3">Argomenti:</p>
+              <div class="flex flex-wrap gap-2">
+                <span class="inline-block bg-secondary/10 dark:bg-secondary/20 text-secondary dark:text-gray-300 text-xs px-3 py-1 rounded-full font-body">Grande Guerra</span>
+                <span class="inline-block bg-secondary/10 dark:bg-secondary/20 text-secondary dark:text-gray-300 text-xs px-3 py-1 rounded-full font-body">Ricerca Storica</span>
+                <span class="inline-block bg-secondary/10 dark:bg-secondary/20 text-secondary dark:text-gray-300 text-xs px-3 py-1 rounded-full font-body">Prima Guerra Mondiale</span>
+              </div>
+            </div>
+
+            <!-- Pulsanti di navigazione -->
+            <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-between">
+              <a
+                href="index.html"
+                class="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline font-body"
+              >
+                <svg fill="currentColor" height="16" viewBox="0 0 256 256" width="16" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"></path>
+                </svg>
+                Torna alla Home
+              </a>
+              <a
+                href="index.html#notizie"
+                class="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline font-body"
+              >
+                Tutti gli Articoli
+                <svg fill="currentColor" height="16" viewBox="0 0 256 256" width="16" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"></path>
+                </svg>
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ==================== ARTICOLI CORRELATI ====================
+             SOSTITUIRE: titoli, descrizioni e link degli articoli correlati -->
+        <section class="py-14 bg-white dark:bg-background-dark border-t border-secondary/10 dark:border-secondary/10">
+          <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
+            <h2 class="text-2xl font-bold text-text-light dark:text-text-dark mb-2 font-display">
+              Potrebbe Interessarti
+            </h2>
+            <div class="w-16 h-1 bg-primary mb-8"></div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+              <!-- Articolo correlato 1 — SOSTITUIRE -->
+              <div class="bg-background-light dark:bg-background-dark shadow rounded-lg overflow-hidden border border-secondary/20 dark:border-secondary/20 flex flex-col">
+                <a class="block" href="articolo.html">
+                  <img
+                    alt="Immagine articolo correlato"
+                    class="w-full h-40 object-cover"
+                    src="soldati_trincea.jpg"
+                  />
+                </a>
+                <div class="p-5 flex-grow flex flex-col">
+                  <span class="text-xs text-primary font-semibold uppercase tracking-wide font-body mb-1">Ricerca Storica</span>
+                  <h3 class="text-base font-bold font-display text-text-light dark:text-text-dark mb-2 flex-grow">
+                    Titolo Articolo Correlato
+                  </h3>
+                  <a class="mt-3 text-primary dark:text-primary hover:underline font-semibold text-sm self-start font-body" href="articolo.html">
+                    Leggi di più
+                  </a>
+                </div>
+              </div>
+
+              <!-- Articolo correlato 2 — SOSTITUIRE -->
+              <div class="bg-background-light dark:bg-background-dark shadow rounded-lg overflow-hidden border border-secondary/20 dark:border-secondary/20 flex flex-col">
+                <a class="block" href="articolo.html">
+                  <img
+                    alt="Immagine articolo correlato"
+                    class="w-full h-40 object-cover"
+                    src="soldati_trincea.jpg"
+                  />
+                </a>
+                <div class="p-5 flex-grow flex flex-col">
+                  <span class="text-xs text-primary font-semibold uppercase tracking-wide font-body mb-1">Conferenze</span>
+                  <h3 class="text-base font-bold font-display text-text-light dark:text-text-dark mb-2 flex-grow">
+                    Titolo Articolo Correlato
+                  </h3>
+                  <a class="mt-3 text-primary dark:text-primary hover:underline font-semibold text-sm self-start font-body" href="articolo.html">
+                    Leggi di più
+                  </a>
+                </div>
+              </div>
+
+              <!-- Articolo correlato 3 — SOSTITUIRE -->
+              <div class="bg-background-light dark:bg-background-dark shadow rounded-lg overflow-hidden border border-secondary/20 dark:border-secondary/20 flex flex-col">
+                <a class="block" href="articolo.html">
+                  <img
+                    alt="Immagine articolo correlato"
+                    class="w-full h-40 object-cover"
+                    src="soldati_trincea.jpg"
+                  />
+                </a>
+                <div class="p-5 flex-grow flex flex-col">
+                  <span class="text-xs text-primary font-semibold uppercase tracking-wide font-body mb-1">Mostre</span>
+                  <h3 class="text-base font-bold font-display text-text-light dark:text-text-dark mb-2 flex-grow">
+                    Titolo Articolo Correlato
+                  </h3>
+                  <a class="mt-3 text-primary dark:text-primary hover:underline font-semibold text-sm self-start font-body" href="articolo.html">
+                    Leggi di più
+                  </a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+      </main>
+
+      <!-- Back to Top Button -->
+      <button
+        id="backToTopBtn"
+        title="Torna su"
+        class="fixed bottom-6 right-6 z-50 bg-primary text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center transition hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+        style="display: none"
+      >
+        <span class="flex items-center justify-center w-full h-full">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            class="w-7 h-7"
+            stroke="white"
+          >
+            <circle cx="12" cy="12" r="9" stroke="white" stroke-width="2" fill="none" />
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 15V9m0 0l-3 3m3-3l3 3" stroke="white" stroke-width="2" />
+          </svg>
+        </span>
+      </button>
+
+      <!-- ==================== FOOTER ==================== -->
+      <footer
+        class="bg-background-light dark:bg-background-dark border-t border-secondary/20 dark:border-secondary/20 py-8 px-4 sm:px-10"
+      >
+        <div
+          class="container mx-auto max-w-7xl flex flex-col md:flex-row justify-between items-center text-sm text-text-light dark:text-text-dark"
+        >
+          <p class="mb-4 md:mb-0">
+            © 2025 Historica Legio. All rights reserved.
+          </p>
+          <nav class="flex flex-wrap justify-center gap-4 md:gap-6">
+            <a class="hover:text-primary dark:hover:text-primary transition-colors" href="index.html">Home</a>
+            <a class="hover:text-primary dark:hover:text-primary transition-colors" href="index.html#chi-siamo">Chi Siamo</a>
+            <a class="hover:text-primary dark:hover:text-primary transition-colors" href="index.html#attivita">Attività</a>
+            <a class="hover:text-primary dark:hover:text-primary transition-colors" href="index.html#prossimi-eventi">Prossimi Eventi</a>
+            <a class="hover:text-primary dark:hover:text-primary transition-colors" href="index.html#contatti">Contatti</a>
+          </nav>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      const backToTopBtn = document.getElementById("backToTopBtn");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 300) {
+          backToTopBtn.style.display = "block";
+        } else {
+          backToTopBtn.style.display = "none";
+        }
+      });
+      backToTopBtn.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    </script>
+  </body>
+</html>
