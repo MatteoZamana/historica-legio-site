@@ -599,16 +599,122 @@
               <p
                 class="text-lg text-text-light dark:text-gray-300 leading-relaxed font-body"
               >
-                Per informazioni, collaborazioni o adesioni, contattaci
+                Per informazioni, collaborazioni o adesioni, compila il form sottostante o contattaci
                 all'indirizzo email:
                 <a
                   class="text-primary hover:underline"
                   href="mailto:historicalegio@gmail.com"
                   >historicalegio@gmail.com</a
-                >
+                > <br>
                 oppure seguici sui nostri canali social per rimanere aggiornato
                 sulle nostre attività.
               </p>
+
+              <div class="mt-10">
+                <div class="p-6 rounded-lg bg-white dark:bg-background-dark border border-secondary/20 dark:border-secondary/20 shadow-lg">
+                  <h3 class="text-xl font-bold text-text-light dark:text-text-dark font-display">
+                    Scrivici un messaggio
+                  </h3>
+                  <p class="mt-2 text-sm text-gray-500 dark:text-gray-400 font-body">
+                    Compila il modulo e premi “Invia”. Ti risponderemo al più presto!
+                  </p>
+
+                  <form class="mt-6 grid grid-cols-1 gap-4" action="https://formspree.io/f/xzdwzrlj" method="POST" onsubmit="return submitContactForm(event)">
+                    <input type="hidden" name="_subject" id="contactSubject" value="Contatto dal sito" />
+
+                    <div>
+                      <p class="text-sm font-medium text-text-light dark:text-text-dark font-body">
+                        Motivo del contatto
+                      </p>
+                      <div class="mt-2 flex flex-wrap gap-4">
+                        <label class="inline-flex items-center gap-2 text-sm text-text-light dark:text-text-dark font-body">
+                          <input
+                            type="checkbox"
+                            name="topic"
+                            value="Iscrizione"
+                            class="rounded border-secondary/20 dark:border-secondary/20 text-primary focus:ring-primary"
+                          />
+                          <span>Diventare Socio</span>
+                        </label>
+                        <label class="inline-flex items-center gap-2 text-sm text-text-light dark:text-text-dark font-body">
+                          <input
+                            type="checkbox"
+                            name="topic"
+                            value="Eventi"
+                            class="rounded border-secondary/20 dark:border-secondary/20 text-primary focus:ring-primary"
+                          />
+                          <span>Partecipazione ad Eventi</span>
+                        </label>
+                        <label class="inline-flex items-center gap-2 text-sm text-text-light dark:text-text-dark font-body">
+                          <input
+                            type="checkbox"
+                            name="topic"
+                            value="Collaborazioni"
+                            class="rounded border-secondary/20 dark:border-secondary/20 text-primary focus:ring-primary"
+                          />
+                          <span>Collaborazioni</span>
+                        </label>
+                        <label class="inline-flex items-center gap-2 text-sm text-text-light dark:text-text-dark font-body">
+                          <input
+                            type="checkbox"
+                            name="topic"
+                            value="Altro"
+                            class="rounded border-secondary/20 dark:border-secondary/20 text-primary focus:ring-primary"
+                          />
+                          <span>Altro</span>
+                        </label>
+                      </div>
+                    </div>
+
+                    <div>
+                      <label class="block text-sm font-medium text-text-light dark:text-text-dark font-body" for="contactName">Nome e Cognome</label>
+                      <input
+                        id="contactName"
+                        name="name"
+                        type="text"
+                        required
+                        class="mt-1 w-full rounded-md border-secondary/20 dark:border-secondary/20 bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark focus:border-primary focus:ring-primary"
+                        placeholder="Il tuo nome e cognome"
+                        autocomplete="name"
+                      />
+                    </div>
+
+                    <div>
+                      <label class="block text-sm font-medium text-text-light dark:text-text-dark font-body" for="contactEmail">Email</label>
+                      <input
+                        id="contactEmail"
+                        name="email"
+                        type="email"
+                        required
+                        class="mt-1 w-full rounded-md border-secondary/20 dark:border-secondary/20 bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark focus:border-primary focus:ring-primary"
+                        placeholder="La tua mail: nome@esempio.com"
+                        autocomplete="email"
+                      />
+                    </div>
+
+                    <div>
+                      <label class="block text-sm font-medium text-text-light dark:text-text-dark font-body" for="contactMessage">Messaggio</label>
+                      <textarea
+                        id="contactMessage"
+                        name="message"
+                        rows="5"
+                        required
+                        class="mt-1 w-full rounded-md border-secondary/20 dark:border-secondary/20 bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark focus:border-primary focus:ring-primary"
+                        placeholder="Scrivi qui il tuo messaggio..."
+                      ></textarea>
+                    </div>
+
+                    <div class="pt-2">
+                      <button
+                        type="submit"
+                        class="inline-flex items-center justify-center rounded-md bg-primary px-8 py-3 text-sm font-semibold text-white shadow-lg transition hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background-dark"
+                      >
+                        Invia
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
             </section>
           </div>
         </div>
@@ -726,6 +832,24 @@
             track.scrollBy({ left: track.clientWidth, behavior: 'smooth' });
           },
         };
+      }
+
+      function submitContactForm(event) {
+        const form = event.target;
+        const name = (form.querySelector('#contactName')?.value || '').trim();
+
+        const selectedTopics = Array.from(form.querySelectorAll('input[name="topic"]:checked'))
+          .map((el) => (el.value || '').trim())
+          .filter(Boolean);
+
+        const topicPrefix = selectedTopics[0] || 'Contatto';
+
+        const subjectField = form.querySelector('#contactSubject');
+        if (subjectField) {
+          subjectField.value = `${topicPrefix} - Contatto dal sito - ${name || 'Senza nome'}`;
+        }
+
+        return true;
       }
     </script>
   </body>
