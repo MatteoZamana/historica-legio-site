@@ -484,75 +484,108 @@
                 Prossimi Eventi
               </h2>
               <div class="w-20 h-1 bg-primary mb-8"></div>
-              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <a
-                  class="group flex flex-col rounded-lg overflow-hidden shadow-lg bg-background-light dark:bg-background-dark border border-secondary/20 dark:border-secondary/20"
-                  href="conferenze.html"
+              <div x-data="eventsCarousel()" x-init="init()" class="relative">
+                <button
+                  type="button"
+                  @click="prev()"
+                  class="hidden md:flex items-center justify-center absolute -left-3 top-1/2 -translate-y-1/2 z-10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm border border-secondary/20 dark:border-secondary/20 text-text-light dark:text-text-dark w-10 h-10 rounded-full hover:bg-primary/10 dark:hover:bg-primary/20 transition"
+                  aria-label="Eventi precedenti"
                 >
-                  <div
-                    class="w-full h-48 bg-cover bg-center"
-                    style="
-                      background-image: url('restauro.jpg');
-                    "
-                  ></div>
-                  <!-- Evento 3-->
-                  <div class="p-6 flex-grow">
-                    <p
-                      class="text-lg font-bold text-text-light dark:text-text-dark font-display"
-                    >
-                      Laboratorio di Restauro
-                    </p>
-                    <p
-                      class="mt-2 text-sm text-gray-500 dark:text-gray-400 font-body"
-                    >
-                      31 maggio 2026 - Laboratorio di Restauro: Pulizia e conservazione dei cimeli storici della Grande Guerra. Relatore: M. Pellegrini - Forte Biondella (via Caroto, VR).
-                    </p>
-                  </div>
-                </a>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-5 h-5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                  </svg>
+                </button>
+
+                <button
+                  type="button"
+                  @click="next()"
+                  class="hidden md:flex items-center justify-center absolute -right-3 top-1/2 -translate-y-1/2 z-10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm border border-secondary/20 dark:border-secondary/20 text-text-light dark:text-text-dark w-10 h-10 rounded-full hover:bg-primary/10 dark:hover:bg-primary/20 transition"
+                  aria-label="Eventi successivi"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-5 h-5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                  </svg>
+                </button>
+
                 <div
-                  class="group flex flex-col rounded-lg overflow-hidden shadow-lg bg-background-light dark:bg-background-dark border border-secondary/20 dark:border-secondary/20"
+                  x-ref="track"
+                  class="flex gap-8 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-2 -mx-4 px-4 md:mx-0 md:px-0"
+                  aria-label="Carosello eventi"
                 >
-                  <a class="block" href="index.html#">
-                    <img
-                      src="forti_aperti.jpg"
-                      alt="Evento storico"
-                      class="w-full h-48 object-cover rounded-t-lg"
-                    />
+                  <a
+                    class="carousel-item group flex flex-col rounded-lg overflow-hidden shadow-lg bg-background-light dark:bg-background-dark border border-secondary/20 dark:border-secondary/20 flex-none basis-[85%] sm:basis-[70%] md:basis-[48%] lg:basis-[32%] snap-start"
+                    href="conferenze.html"
+                  >
+                    <div
+                      class="w-full h-48 bg-cover bg-center"
+                      style="
+                        background-image: url('restauro.jpg');
+                      "
+                    ></div>
+                    <!-- Evento 3-->
+                    <div class="p-6 flex-grow">
+                      <p
+                        class="text-lg font-bold text-text-light dark:text-text-dark font-display"
+                      >
+                        Laboratorio di Restauro
+                      </p>
+                      <p
+                        class="mt-2 text-sm text-gray-500 dark:text-gray-400 font-body"
+                      >
+                        31 maggio 2026 - Laboratorio di Restauro: Pulizia e conservazione dei cimeli storici della Grande Guerra. Relatore: M. Pellegrini - Forte Biondella (via Caroto, VR).
+                      </p>
+                    </div>
                   </a>
-                  <!-- Evento 2 -->
-                  <div class="p-6 flex-grow">
-                    <p
-                      class="text-lg font-bold text-text-light dark:text-text-dark font-display"
-                    >
-                      Giornata della Fortezze
-                    </p>
-                    <p
-                      class="mt-2 text-sm text-gray-500 dark:text-gray-400 font-body"
-                    >
-                      31 maggio 2026 - Visite guidate alla scoperta di due luoghi simbolo della storia militare di Verona: Forte Procolo con i suoi imponenti ambienti e Forte Biondella raramente visitabile e sede del museo della Grande Guerra alla memoria della MOVM Carlo Ederle.
-                    </p>
+
+                  <div
+                    class="carousel-item group flex flex-col rounded-lg overflow-hidden shadow-lg bg-background-light dark:bg-background-dark border border-secondary/20 dark:border-secondary/20 flex-none basis-[85%] sm:basis-[70%] md:basis-[48%] lg:basis-[32%] snap-start"
+                  >
+                    <a class="block" href="index.html#">
+                      <img
+                        src="forti_aperti.jpg"
+                        alt="Evento storico"
+                        class="w-full h-48 object-cover rounded-t-lg"
+                      />
+                    </a>
+                    <!-- Evento 2 -->
+                    <div class="p-6 flex-grow">
+                      <p
+                        class="text-lg font-bold text-text-light dark:text-text-dark font-display"
+                      >
+                        Giornata della Fortezze
+                      </p>
+                      <p
+                        class="mt-2 text-sm text-gray-500 dark:text-gray-400 font-body"
+                      >
+                        31 maggio 2026 - Visite guidate alla scoperta di due luoghi simbolo della storia militare di Verona: Forte Procolo con i suoi imponenti ambienti e Forte Biondella raramente visitabile e sede del museo della Grande Guerra alla memoria della MOVM Carlo Ederle.
+                      </p>
+                    </div>
                   </div>
-                </div>
-                <!-- Evento 1-->
-                <a class='group flex flex-col rounded-lg overflow-hidden shadow-lg bg-background-light dark:bg-background-dark border border-secondary/20 dark:border-secondary/20 hover:shadow-xl hover:border-primary/40 transition-all duration-300' href='conferenze.html'>
+
+                  <!-- Evento 1-->
+                  <a
+                    class="carousel-item group flex flex-col rounded-lg overflow-hidden shadow-lg bg-background-light dark:bg-background-dark border border-secondary/20 dark:border-secondary/20 hover:shadow-xl hover:border-primary/40 transition-all duration-300 flex-none basis-[85%] sm:basis-[70%] md:basis-[48%] lg:basis-[32%] snap-start"
+                    href="conferenze.html"
+                  >
                     <img
                       src="napoleone.jpg"
                       alt="Conferenza su Napoleone"
                       class="w-full h-48 object-cover rounded-t-lg"
                     />
-                  <div class="p-6 flex-grow">
-                    <p
-                      class="text-lg font-bold text-text-light dark:text-text-dark font-display"
-                    >
-                      Conferenza sulla figura di Napoleone
-                    </p>
-                    <p
-                      class="mt-2 text-sm text-gray-500 dark:text-gray-400 font-body"
-                    >
-                      22 febbraio 2026 - Conferenza:<br /> "Un viaggio nella storia. L'Uomo e il Condottiero oltre il mito, i luoghi comuni e le fake news". Relatore: Avv. Scognamillo E. - Forte Biondella (VR).
-                    </p>
-                  </div>
-                </a>
+                    <div class="p-6 flex-grow">
+                      <p
+                        class="text-lg font-bold text-text-light dark:text-text-dark font-display"
+                      >
+                        Conferenza sulla figura di Napoleone
+                      </p>
+                      <p
+                        class="mt-2 text-sm text-gray-500 dark:text-gray-400 font-body"
+                      >
+                        22 febbraio 2026 - Conferenza:<br /> "Un viaggio nella storia. L'Uomo e il Condottiero oltre il mito, i luoghi comuni e le fake news". Relatore: Avv. Scognamillo E. - Forte Biondella (VR).
+                      </p>
+                    </div>
+                  </a>
+                </div>
               </div>
             </section>
             <section class="py-16 px-4 sm:px-0" id="contatti">
@@ -666,6 +699,33 @@
       backToTopBtn.addEventListener("click", () => {
         window.scrollTo({ top: 0, behavior: "smooth" });
       });
+
+      function eventsCarousel() {
+        return {
+          maxCards: 6,
+          init() {
+            const track = this.$refs.track;
+            if (!track) return;
+
+            const items = Array.from(track.querySelectorAll('.carousel-item'));
+            if (items.length > this.maxCards) {
+              items.slice(this.maxCards).forEach((el) => {
+                el.style.display = 'none';
+              });
+            }
+          },
+          prev() {
+            const track = this.$refs.track;
+            if (!track) return;
+            track.scrollBy({ left: -track.clientWidth, behavior: 'smooth' });
+          },
+          next() {
+            const track = this.$refs.track;
+            if (!track) return;
+            track.scrollBy({ left: track.clientWidth, behavior: 'smooth' });
+          },
+        };
+      }
     </script>
   </body>
 </html>
